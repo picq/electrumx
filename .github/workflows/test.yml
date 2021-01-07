@@ -6,7 +6,7 @@ on:
       - opened
       - synchronize
   push:
-    branches: [ * ]
+    branches: '*'
 
 jobs:
   build:
