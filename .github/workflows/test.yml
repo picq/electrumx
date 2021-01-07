@@ -5,15 +5,15 @@ on:
     types:
       - opened
       - synchronize
-  push:
-    branches: '*'
+#  push:
+#    branches: '*'
 
 jobs:
   build:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [ 3.7 ]
+        python-version: [ pypy-3.7-nightly ]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -40,9 +40,14 @@ jobs:
           pip install aiohttp aiorpcX plyvel pycodestyle pylru python-rocksdb pytest-asyncio pytest-cov Sphinx
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
-      - name: Run tests
+      - name: Run pytest
         run: |
           pytest --cov=electrumx
           pycodestyle --max-line-length=100 electrumx/server/*.py electrumx/lib/*.py *.py
           sh -c "cd docs && make html"
+
+      - name: Run pycodestyle
+        run: |
+          pycodestyle --max-line-length=100 electrumx/server/*.py electrumx/lib/*.py *.py
+
 
