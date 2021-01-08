@@ -2,7 +2,13 @@ FROM python:3.7-alpine3.11
 
 WORKDIR /source
 
-RUN apk add --no-cache git build-base openssl && \
+RUN apk add --no-cache \
+        git \
+        build-base \
+        openssl \
+        libressl-dev \
+        libffi-dev \
+        gcc && \
     apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/v3.11/main leveldb-dev && \
     apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing rocksdb-dev && \
     pip install \
