@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v1.17.0 (2021-01-08)
+### Feature
+* **release:** Push new feature ([`ec4c410`](https://github.com/picq/electrumx/commit/ec4c41032910128ebdf66293b34713667453f68e))
+
 ## v1.16.0 (2021-01-08)
 ### Feature
 * **ci:** Github actions to build and test app in docker ([`f190fe9`](https://github.com/picq/electrumx/commit/f190fe98e59427b23f3a1a449b0953896eb66f7c))
