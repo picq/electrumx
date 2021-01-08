@@ -13,7 +13,7 @@ test:
 	@$(CONTAINER_CMD) pytest --cov=electrumx
 
 pycodestyle:
-	@$(CONTAINER_CMD) flake8 --exit-zero --max-line-length 100 --filename electrumx/server/*.py,electrumx/lib/*.py,*.py
+	@$(CONTAINER_CMD) flake8 --exit-zero --max-line-length 100 --filename "./electrumx/**/*.py,./electrumx/*.py"
 
 coveralls:
 	@$(CONTAINER_CMD) coveralls
