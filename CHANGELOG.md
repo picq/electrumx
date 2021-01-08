@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v1.17.2 (2021-01-08)
+### Fix
+* **release:** Test release description in github ([`d8d1ee2`](https://github.com/picq/electrumx/commit/d8d1ee24d27f280bc4455bb4b90f70dc363a282c))
+
 ## v1.17.1 (2021-01-08)
 ### Fix
 * **release:** Test release description in github ([`29e0f9d`](https://github.com/picq/electrumx/commit/29e0f9dd4171eeb5f74ef981b09c85ebb35030a0))
