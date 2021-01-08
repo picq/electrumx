@@ -16,6 +16,7 @@ RUN apk add --no-cache git build-base openssl && \
         pytest-cov \
         pycodestyle \
         coveralls \
+        flake8 \
     && mkdir /db
 
 RUN ulimit -n 1048576

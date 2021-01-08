@@ -27,14 +27,14 @@ jobs:
         continue-on-error: true
 
       - name: Build docker image
-        run: make build
+        run: docker build -t electric-cash-electrumx-ci .
 
       - name: pytest
-        run: make test
+        run: docker run --rm -w /source -e LOCAL_USER_ID=`id -u` -v "$(PWD):/source" electric-cash-electrumx-ci pytest --cov=electrumx
 
       - name: pycodestyle
-        run: make pycodestyle
+        run: docker run --rm -w /source -e LOCAL_USER_ID=`id -u` -v "$(PWD):/source" electric-cash-electrumx-ci flake8 --exit-zero --max-line-length 100 --filename electrumx/server/*.py,electrumx/lib/*.py,*.py
 
       - name: coveralls
-        run: make coveralls
+        run: docker run --rm -w /source -e LOCAL_USER_ID=`id -u` -v "$(PWD):/source" electric-cash-electrumx-ci coveralls
 
